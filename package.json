@@ -2,7 +2,7 @@
   "name": "dagger",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://thegabs.github.io/Dagger",
+  "homepage": "https://thegabs.github.io/Dagger/build",
   "dependencies": {
     "@material-ui/core": "^3.6.0",
     "lodash": "^4.17.11",

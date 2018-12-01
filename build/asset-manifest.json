@@ -1,14 +1,14 @@
 {
-  "main.css": "/Dagger/static/css/main.bce4d56a.chunk.css",
-  "main.js": "/Dagger/static/js/main.b3c2d085.chunk.js",
-  "main.js.map": "/Dagger/static/js/main.b3c2d085.chunk.js.map",
-  "static/js/1.25b9fb9c.chunk.js": "/Dagger/static/js/1.25b9fb9c.chunk.js",
-  "static/js/1.25b9fb9c.chunk.js.map": "/Dagger/static/js/1.25b9fb9c.chunk.js.map",
-  "runtime~main.js": "/Dagger/static/js/runtime~main.797f3970.js",
-  "runtime~main.js.map": "/Dagger/static/js/runtime~main.797f3970.js.map",
-  "static/media/logo.svg": "/Dagger/static/media/logo.5d5d9eef.svg",
-  "static/css/main.bce4d56a.chunk.css.map": "/Dagger/static/css/main.bce4d56a.chunk.css.map",
-  "index.html": "/Dagger/index.html",
-  "precache-manifest.686194f36722092a68788295b556b454.js": "/Dagger/precache-manifest.686194f36722092a68788295b556b454.js",
-  "service-worker.js": "/Dagger/service-worker.js"
+  "main.css": "/Dagger/build/static/css/main.bce4d56a.chunk.css",
+  "main.js": "/Dagger/build/static/js/main.367a55ef.chunk.js",
+  "main.js.map": "/Dagger/build/static/js/main.367a55ef.chunk.js.map",
+  "static/js/1.25b9fb9c.chunk.js": "/Dagger/build/static/js/1.25b9fb9c.chunk.js",
+  "static/js/1.25b9fb9c.chunk.js.map": "/Dagger/build/static/js/1.25b9fb9c.chunk.js.map",
+  "runtime~main.js": "/Dagger/build/static/js/runtime~main.9543c434.js",
+  "runtime~main.js.map": "/Dagger/build/static/js/runtime~main.9543c434.js.map",
+  "static/media/logo.svg": "/Dagger/build/static/media/logo.5d5d9eef.svg",
+  "static/css/main.bce4d56a.chunk.css.map": "/Dagger/build/static/css/main.bce4d56a.chunk.css.map",
+  "index.html": "/Dagger/build/index.html",
+  "precache-manifest.49710be479af025ba4ec50c3ad94e3c9.js": "/Dagger/build/precache-manifest.49710be479af025ba4ec50c3ad94e3c9.js",
+  "service-worker.js": "/Dagger/build/service-worker.js"
 }
