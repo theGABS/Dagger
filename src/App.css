@@ -34,7 +34,6 @@
 
 .main-content{
   width: calc(100% - 240px);
-  background: green;
   margin-left: 240px;
   height: calc(100vh - 65px);
 }

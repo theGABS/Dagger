@@ -135,7 +135,7 @@ class App extends Component {
             <ListItemText primary='Restart Server' onClick={this.handleClickOpen} />
           </ListItem>
           <ListItem button key='Commits'>
-          <Link to={'/commit-page'}><ListItemText primary='Commits' /></Link>
+          <Link to={'/commitsets-page'}><ListItemText primary='Commits' /></Link>
           </ListItem>
           <ListItem button key='Workers'>
             <ListItemText primary='Workers' />
@@ -149,7 +149,7 @@ class App extends Component {
       <div className="main-content">
       <Switch>
 
-        <Route path='/commit-page' component={CommitsPage}/>
+        <Route path='/commitsets-page' component={CommitsPage}/>
 
       </Switch>
       </div>
