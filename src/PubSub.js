@@ -40,7 +40,9 @@ export const client = new Client("35.176.145.209", () => {
       subscriber({msg_id, method, args, response})
     })
 
-    console.log("Response", msg_id, method, args, response);
+    if (!subscribeObject[method]) {
+      console.log("Response", msg_id, method, args, response);
+    }
 
 
 })

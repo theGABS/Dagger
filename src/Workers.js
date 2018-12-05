@@ -5,7 +5,7 @@ import ReactTable from "react-table";
 import { Link } from 'react-router-dom';
 import 'react-table/react-table.css';
 
-export class CommitsPage extends Component {
+export class Workers extends Component {
 
   state = {
     date: []
@@ -14,10 +14,10 @@ export class CommitsPage extends Component {
 
   componentDidMount(){
     onOpenPromise.then(() => {
-      client.get_dcommits();
+      client.get_workers();
     })
 
-    subscribe('get_dcommits' , (({msg_id, method, args, response}) => {
+    subscribe('get_workers' , (({msg_id, method, args, response}) => {
       this.setState({
         date: response
       })
@@ -25,22 +25,21 @@ export class CommitsPage extends Component {
   }
 
   render() {
-    console.log("commits answer!!! ", this.state.date)
-    // const data = this.state.date.map(({dcommit}) => ({dcommits: dcommit}))
+
     const data = this.state.date
     const columns = [{
+      Header: 'worker_id',
+      accessor: 'worker_id',
+      
+    }, {
       Header: 'dcommit',
       accessor: 'dcommit',
-      Cell: props => {
-        return <Link to={'/commit-page/' + Base64.encode(props.value)}>{props.value}</Link>
-      }
-    },{
-      Header: '# dcallables',
-      accessor: '# dcallables',
-
     }, {
-      Header: 'imageid',
-      accessor: 'imageid',
+      Header: 'start_time',
+      accessor: 'start_time',
+    }, {
+      Header: 'stop_time',
+      accessor: 'stop_time',
     }]
     return (
       <div className="App">
@@ -53,4 +52,4 @@ export class CommitsPage extends Component {
   }
 }
 
-export default (CommitsPage);
+export default (Workers);

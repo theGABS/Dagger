@@ -17,7 +17,15 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import logo from './logo.svg';
+import CommitSetsPage from './CommitSetsPage';
+import CommitSetPage from './CommitSetPage';
+import Workers from './Workers';
+import Worker from './Worker';
+import Nodes from './Nodes';
+import Node from './Node';
 import CommitsPage from './CommitsPage';
+import CommitPage from './CommitPage';
+import BuildCommit from './BuildCommit';
 import './App.css';
 import {subscribe, client} from './PubSub';
 /* eslint-disable */
@@ -91,6 +99,7 @@ class App extends Component {
     let checkConnectionTimerId;
 
     subscribe('ping' , (({msg_id, method, args, response}) => {
+      // console.log("{msg_id, method, args, response}", {msg_id, method, args, response})
       if(msg_id in window.ping_start_times) {
           clearTimeout(checkConnectionTimerId)
           checkConnectionTimerId = setTimeout(() => {this.setState({
@@ -134,14 +143,23 @@ class App extends Component {
           <ListItem button key='Restart Server'>
             <ListItemText primary='Restart Server' onClick={this.handleClickOpen} />
           </ListItem>
+          <ListItem button key='Commitsets'>
+            <Link to={'/commitsets-page'}><ListItemText primary='Commitsets' /></Link>
+          </ListItem>
           <ListItem button key='Commits'>
-          <Link to={'/commitsets-page'}><ListItemText primary='Commits' /></Link>
+            <Link to={'/commits-page'}><ListItemText primary='Commits' /></Link>
+          </ListItem>
+          <ListItem button key='Build commit'>
+            <Link to={'/build_commit'}><ListItemText primary='Build commit' /></Link>
           </ListItem>
           <ListItem button key='Workers'>
-            <ListItemText primary='Workers' />
+            <Link to={'/workers'}><ListItemText primary='Workers' /></Link>
+          </ListItem>
+          <ListItem button key='Worker'>
+            <Link to={'/worker'}><ListItemText primary='Worker Logs' /></Link>
           </ListItem>
           <ListItem button key='Nodes'>
-            <ListItemText primary='Nodes'/>
+            <Link to={'/nodes'}><ListItemText primary='Nodes'/></Link>
           </ListItem>
         </List>
         <Divider />
@@ -149,7 +167,16 @@ class App extends Component {
       <div className="main-content">
       <Switch>
 
-        <Route path='/commitsets-page' component={CommitsPage}/>
+        <Route path='/commitsets-page' component={CommitSetsPage}/>
+        <Route path='/commitset-page/:id' component={CommitSetPage}/>
+        <Route path='/workers' component={Workers}/>
+        <Route path='/worker' component={Worker}/>
+        <Route path='/nodes' component={Nodes}/>
+        <Route path='/build_commit' component={BuildCommit}/>
+        <Route path='/node/:id' component={Node}/>
+        <Route path='/commits-page' component={CommitsPage}/>
+        <Route path='/commit-page/:id' component={CommitPage}/>
+
 
       </Switch>
       </div>

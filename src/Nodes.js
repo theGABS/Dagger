@@ -14,10 +14,10 @@ export class CommitsPage extends Component {
 
   componentDidMount(){
     onOpenPromise.then(() => {
-      client.get_dcommits();
+      client.get_nodes();
     })
 
-    subscribe('get_dcommits' , (({msg_id, method, args, response}) => {
+    subscribe('get_nodes' , (({msg_id, method, args, response}) => {
       this.setState({
         date: response
       })
@@ -25,22 +25,15 @@ export class CommitsPage extends Component {
   }
 
   render() {
-    console.log("commits answer!!! ", this.state.date)
-    // const data = this.state.date.map(({dcommit}) => ({dcommits: dcommit}))
-    const data = this.state.date
+    console.log("nodes table", this.state.date)
+    const data = this.state.date.map(({id}) => ({id: id}))
     const columns = [{
-      Header: 'dcommit',
-      accessor: 'dcommit',
+      Header: 'id',
+      accessor: 'id',
       Cell: props => {
-        return <Link to={'/commit-page/' + Base64.encode(props.value)}>{props.value}</Link>
+        console.log("props", props)
+        return <Link to={'/node/' + Base64.encode(props.value)}>{props.value}</Link>
       }
-    },{
-      Header: '# dcallables',
-      accessor: '# dcallables',
-
-    }, {
-      Header: 'imageid',
-      accessor: 'imageid',
     }]
     return (
       <div className="App">

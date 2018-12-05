@@ -55,7 +55,7 @@ class Client {
         assert(typeof method === 'string', method);
         if(args == undefined) args = [];
         assert(typeof args === 'object', args);
-        console.log("Request", method, args);
+        // console.log("Request", method, args);
         this.methods[this.msg_id_autoinc] = method;
         this.argss[this.msg_id_autoinc] = args;
         var msg = MsgpackUtils.pack({"method":method,"args":args,"msg_id":this.msg_id_autoinc});
@@ -79,6 +79,15 @@ class Client {
     get_dcommitsets() {
         return this._call("get_dcommitsets")
     }
+    get_dcommitset(dcommitset) {
+        return this._call("get_dcommitset",[dcommitset])
+    }
+    get_dcommits() {
+        return this._call("get_dcommits")
+    }
+    get_dcommit(dcommit) {
+        return this._call("get_dcommit",[dcommit])
+    }
     get_nodes() {
         return this._call("get_nodes");
     }
@@ -86,14 +95,17 @@ class Client {
         return this._call("get_nodes_raw");
     }
     get_node(id) {
-        assert(id instanceof int, id);
+        assert(typeof(id) === 'number', id);
         return this._call("get_node",[id]);
     }
     build(dcommitset) {
         assert(typeof dcommitset === 'string', dcommitset);
         return this._call("build",[dcommitset]);
     }
-    worker_logs() {
-        return this._call("worker_logs");
+    get_workers() {
+        return this._call("get_workers");
+    }
+    get_worker_logs() {
+        return this._call("get_worker_logs");
     }
 }
