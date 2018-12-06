@@ -59,6 +59,7 @@ export class BuildCommit extends Component {
     const { classes } = this.props;
     return (
       <div className="App-commit">
+        <div className="response">{JSON.stringify(this.state.date)}</div>
         <div className="commit-form">
           <div className="commit-text">Build new commit</div>
           <Input
